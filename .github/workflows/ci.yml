@@ -30,7 +30,12 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
+      - name: Check for .modules.yaml
+        run: |
+          if [ ! -f node_modules/.modules.yaml ]; then
+            echo ".modules.yaml not found, running pnpm install again"
+            pnpm install --frozen-lockfile
+          fi
       - uses: nrwl/nx-set-shas@v4
 
       - run: pnpm exec nx-cloud record -- nx format:check
