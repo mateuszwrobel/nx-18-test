@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@interviews/auth": ["modules/auth/src/index.ts"],
+      "@interviews/forecast": ["modules/forecast/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
