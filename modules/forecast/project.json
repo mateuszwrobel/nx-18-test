@@ -1,0 +1,8 @@
+{
+  "name": "forecast",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/forecast/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}
