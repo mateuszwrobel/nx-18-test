@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 test('has title', async ({ page }) => {
   await page.goto('/');
 
