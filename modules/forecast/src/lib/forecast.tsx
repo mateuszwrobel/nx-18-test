@@ -1,4 +1,4 @@
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 
 import styles from './forecast.module.scss';
 
@@ -15,12 +15,14 @@ export function Forecast(props: ForecastProps) {
           <Link to="/">modules/forecast/src/lib/forecast root</Link>
         </li>
       </ul>
-      <Route
-        path="/"
-        element={
-          <div>This is the modules/forecast/src/lib/forecast root route.</div>
-        }
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>This is the modules/forecast/src/lib/forecast root route.</div>
+          }
+        />
+      </Routes>
     </div>
   );
 }

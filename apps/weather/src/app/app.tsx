@@ -1,8 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
-
 import { Route, Routes, Link } from 'react-router-dom';
 
 import { Auth } from '@interviews/auth';
@@ -12,14 +7,6 @@ import { Forecast } from '@interviews/forecast';
 export function App() {
   return (
     <div>
-      <NxWelcome title="weather" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
       <div role="navigation">
         <ul>
           <li>
@@ -41,13 +28,14 @@ export function App() {
           path="/"
           element={
             <div>
+              <h1>Main App</h1>
               This is the generated root route.{' '}
               <Link to="/page-2">Click here for page 2.</Link>
             </div>
           }
         />
-        <Route path="/forecast" element={<Forecast />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route path="/forecast/*" element={<Forecast />} />
+        <Route path="/auth/*" element={<Auth />} />
         <Route
           path="/page-2"
           element={
@@ -56,6 +44,7 @@ export function App() {
             </div>
           }
         />
+        <Route path="*" element={<div>Not Found</div>} />
       </Routes>
       {/* END: routes */}
     </div>
